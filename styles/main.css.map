@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,mGAAI",
+    "sources": [
+        "main.scss",
+        "_.mixins.scss",
+        "_.colors.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
