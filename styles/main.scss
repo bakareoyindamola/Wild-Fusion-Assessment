@@ -98,6 +98,9 @@
             }
 
             .hero-links {
+                @include flex(row, flex-start, center);
+                flex-wrap: wrap;
+
                 .learn-button {
                     @include button;
                 }
@@ -108,9 +111,25 @@
                 }
 
                 .contact-button {
+                    display: inline-block;
                     @include font(600, 1.125rem, 27px);
                     color: $button-color;
                     text-decoration: underline;
+                    padding-top: 10px;
+                }
+            }
+
+            @include maxWidth(507px) {
+                h2 {
+                    @include font(bold, 2.5rem, 52px);
+                    margin-bottom: 24px;
+                }
+            }
+
+            @include maxWidth(381px) {
+                h2 {
+                    @include font(bold, 2rem, 42px);
+                    margin-bottom: 24px;
                 }
             }
         }
@@ -244,8 +263,6 @@
                     .goal-img {
                         width: 64px;
                         height: 64px;
-                        border-radius: 4px;
-                        background-color: #C4C4C4;
                         margin-bottom: 40px;
                     }
 
@@ -298,6 +315,12 @@
                     @include font(normal, 1rem, 24px);
                     max-width: 420px;
                     color: $text-color;
+                }
+
+                @include maxWidth(507px) {
+                    h2 {
+                        @include font(bold, 1.9rem, 44px);
+                    }
                 }
             }
 
@@ -434,19 +457,27 @@
                 max-width: 459px;
                 margin: auto;
             }
+
+            @include maxWidth(561px) {
+                h2 {
+                    @include font(bold, 1.9rem, 44px);
+                }
+            }
         }
 
         .solution-content {
             max-width: 1113px;
             margin-top: 72px;
-            @include flex(row, space-between, flex-end);
+            @include flex(row, space-between, center);
 
             .solution-img {
                 max-width: 489px;
                 width: 100%;
-                height: 516px;
-                background-color: #F8FAFD;
                 margin-right: 30px;
+
+                img {
+                    max-width: 100%;
+                }
             }
 
             .solution-text-content-wrapper {
@@ -486,9 +517,11 @@
                             .sub-content-img {
                                 width: 56px;
                                 height: 56px;
-                                border-radius: 4px;
-                                background: #C4C4C4;
                                 margin-right: 1rem;
+
+                                img {
+                                    max-width: 100%;
+                                }
                             }
 
                             h5 {
@@ -510,6 +543,8 @@
 
                 .solution-links {
                     margin-top: 68px;
+                    @include flex(row, flex-start, center);
+                    flex-wrap: wrap;
 
                     .send-button {
                         @include button;
@@ -524,11 +559,13 @@
                         @include font(600, 1.125rem, 27px);
                         color: $button-color;
                         text-decoration: underline;
+                        display: inline-block;
+                        padding-top: 10px;
                     }
                 }
             }
 
-            @include maxWidth(950px) {
+            @include maxWidth(977px) {
                 @include flex(column, center, center);
 
                 .solution-img {
@@ -573,9 +610,11 @@
             margin-right: 30px;
 
             .cases-img {
-                width: 684px;
-                height: 666px;
-                background-color: #F4F4F4;
+                width: 100%;
+
+                img {
+                    max-width: 100%;
+                }
             }
         }
 
@@ -631,6 +670,10 @@
         @include maxWidth(1248px) {
             @include flex(column, center, center);
 
+            .cases-img {
+                margin-bottom: 30px;
+            }
+
             .cases-text-content {
                 .cases-sub-content {
                     max-width: 100%;
@@ -646,17 +689,6 @@
         }
 
         @include maxWidth(1050px) {
-            .cases-img-wrapper {
-                margin-right: 0;
-    
-                .cases-img {
-                    width: 100%;
-                    min-height: 666px;
-                    height: 100%;
-                    background-color: #F4F4F4;
-                }
-            }
-
             .cases-text-content {
                 @include maximum-width;
 
@@ -672,6 +704,8 @@
         }
 
         @include maxWidth(589px) {
+            max-width: 100%;
+            margin-right: 0;
             @include flex(column, center, center);
 
             .cases-text-content {
@@ -727,6 +761,12 @@
                     @include font(600, 1.125rem, 27px);
                     color: $button-color;
                     text-decoration: underline;
+                }
+
+                @include maxWidth(561px) {
+                    h2 {
+                        @include font(bold, 1.7rem, 36px);
+                    }
                 }
             }
 
@@ -877,6 +917,14 @@ footer {
                             }
                         }
                     }
+
+                    @include maxWidth(763px) {
+                        @include flex(column, space-between, flex-start);
+
+                        .footer-links {
+                            margin-bottom: 30px;
+                        }
+                    }
                 }
 
                 .footer-contact {
@@ -902,6 +950,24 @@ footer {
                         border-bottom:  1px solid #9E9D9D;
                         color: #9E9D9D;
                     }
+                }
+
+                @include maxWidth(763px) {
+                    @include flex(column, space-between, flex-start);
+
+                    .footer-links-contents {
+                        max-width: 400px;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+
+            @include maxWidth(1015px) {
+                @include flex(column, space-between, flex-start);
+
+                .footer-links-wrapper {
+                    margin-top: 20px;
                 }
             }
         }
