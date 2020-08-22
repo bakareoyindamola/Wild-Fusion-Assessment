@@ -1,0 +1,124 @@
+@import '_mixins';
+@import '_colors';
+@import '_normalize';
+
+// Navigation Styles
+.navigation-wrapper {
+    background-color: $white;
+    padding: 24px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+
+    a {
+        color: $text-color;
+    }
+
+    nav {
+        @include maximum-width;
+
+        @include flex(row, space-between, center);
+
+        a {
+            display: inline-block;
+            font-family: 'Palanquin', sans-serif;
+            @include font(bold, 1.125rem, 33px);
+        }
+
+        .nav-logo {
+            @include font(bold, 2rem, 58px);
+
+            span {
+                color: $button-color;
+            }
+        }
+
+        .top-nav-links {
+            @include flex(row, space-between, center);
+
+            ul {
+                @include flex(row, space-between, center);
+            }
+        }
+    }
+}
+
+// Hero Styles
+.hero-wrapper {
+    background: $white;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        right: 0;
+        height: 100px;
+        width: 100%;
+        background: #e4f0ff;
+        transform: skew(0deg, -2deg);
+      }
+
+    .hero-contents {
+        @include maximum-width;
+        padding: 159px 0  93px;
+
+        .hero-text-wrapper {
+            max-width: 459px;
+
+            h2 {
+                @include font(bold, 4rem, 62px);
+                margin-bottom: 24px;
+            }
+
+            p {
+                @include font(normal, 1rem, 24px);
+                margin-bottom: 59px;
+            }
+
+            .hero-links {
+                .learn-button {
+                    @include button;
+                }
+
+                span {
+                    @include font(600, 1.125rem, 27px);
+                    margin: 0 24px;
+                }
+
+                .contact-button {
+                    @include font(600, 1.125rem, 27px);
+                    color: $button-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// Secondary Contents Wrapper 
+.secondary-contents {
+    background: linear-gradient(180deg, #E1EEFF 0%, rgba(245, 248, 252, 0) 108.26%);
+
+    // Partners Styles
+    .partners-wrapper {
+        @include maximum-width;
+        padding-top: 60px;
+        margin-bottom: 104px;
+
+        h5 {
+            @include font(bold, 1.125rem, 27px);
+            margin-bottom: 45px;
+        }
+    }
+
+    // Goals Styles 
+    .goals-wrapper {
+        @include maximum-width;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+    }
+}

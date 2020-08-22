@@ -1,0 +1,54 @@
+@import '_mixins';
+@import '_colors';
+@import '_normalize';
+
+// Navigation Styles
+.navigation-wrapper {
+    background-color: $white;
+    padding: 30px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    nav {
+        @include maximum-width;
+
+        @include flex(row, space-between, center);
+
+        a {
+            display: inline-block;
+            font-family: 'Palanquin', sans-serif;
+            font-weight: bold;
+        }
+
+        .top-nav-links {
+            @include flex(row, space-between, center);
+
+            ul {
+                @include flex(row, space-between, center);
+            }
+        }
+    }
+}
+
+// Hero Styles
+.hero-wrapper {
+    background-color: $white;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 51%;
+        background: $body-background;
+        transform: skew(0deg, 6deg);
+      }
+
+    .hero-contents {
+        @include maximum-width;
+        padding: 159px 0  93px;
+    }
+}
