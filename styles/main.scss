@@ -55,11 +55,76 @@
             }
         }
 
-        @include maxWidth(925px) {
+        .menu-icon {
+            display: none;
+        }
+
+        @include maxWidth(950px) {
             ul {
                 display: none;
             }
+
+            .menu-icon {
+                display: block;
+            }
         }
+    }
+}
+
+// Mobile Navigation Styles
+.mobile-navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    background: $white;
+    z-index: 100;
+    max-width: 300px;
+    width: 70%;
+    transition: all .5s ease-in-out;
+
+    &.active {
+        right: 0;
+    }
+
+    nav {
+        padding: 40px;
+
+        li {
+            padding: 20px 0;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    @include minWidth(950px) {
+        display: none;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.5);
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+    
+    @include minWidth(950px) {
+        display: none;
     }
 }
 
