@@ -8,7 +8,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 2;
+    z-index: 20;
 
     &.active {
         background-color: #FFF;
@@ -55,7 +55,7 @@
             }
         }
 
-        @include maxWidth(880px) {
+        @include maxWidth(925px) {
             ul {
                 display: none;
             }
@@ -112,6 +112,51 @@
                     color: $button-color;
                     text-decoration: underline;
                 }
+            }
+        }
+    }
+
+    .hero-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+
+        @include maxWidth(1218px) {
+            right: -20%;
+
+            img {
+                width: 80%;
+                margin: 0 0 0 auto;
+            }
+        }
+
+        @include maxWidth(966px) {
+            right: -40%;
+            
+            img {
+                width: 60%;
+                margin: 0 0 0 auto;
+            }
+        }
+
+        @include maxWidth(850px) {
+            right: -50%;
+            
+            img {
+                width: 50%;
+                margin: 0 0 0 auto;
+            }
+        }
+
+        @include maxWidth(790px) {
+            position: relative;
+            width: 100%;
+            right: 0;
+            text-align: right;
+
+            img {
+                width: 60%;
             }
         }
     }
@@ -770,7 +815,77 @@ footer {
         }
 
         .footer-last-contents {
+            @include flex(row, space-between, flex-end);
+            padding-top: 30px;
 
+            .footer-last-logo {
+                h3 {  
+                    @include font(bold, 2rem, 58px);
+                    color: $white;
+                    
+                    span {
+                        color: #3BDFAB;
+                    }
+                }
+
+                p {
+                    @include font(300, 0.875rem, 36px);
+                    color: #9E9D9D;
+                }
+            }
+
+            .footer-links-wrapper {
+                @include flex(row, space-between, flex-start);
+                max-width: 700px;
+                width: 100%;
+
+                .footer-links-contents {
+                    @include flex(row, space-between, flex-start);
+
+                    .footer-links {
+                        margin-right: 40px;
+
+                        p {
+                            @include font(normal, 1rem, 24px);
+                            color: #9E9D9D;
+                            text-transform: uppercase;
+                        }
+
+                        li {
+                            padding: 10px 0;
+
+                            a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                .footer-contact {
+                    p {
+                        @include font(normal, 1rem, 24px);
+                        color: #9E9D9D;
+                        text-transform: uppercase;
+                    }
+
+                    h5 {
+                        margin-top: 10px;
+                        @include font(normal, 1rem, 24px);
+                        color: $white;
+                        margin-bottom: 30px;
+                    }
+
+                    input {
+                        padding: 10px 0;
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        background: transparent;
+                        border-bottom:  1px solid #9E9D9D;
+                        color: #9E9D9D;
+                    }
+                }
+            }
         }
     }
 }
