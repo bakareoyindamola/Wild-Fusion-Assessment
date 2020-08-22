@@ -1,23 +1,33 @@
 
 const header = document.querySelector('.navigation-wrapper');
-// const scrollToTop = document.querySelector('#scrollto-top');
+const menu = document.querySelector('.menu-icon');
+const mobileNav = document.querySelector('.mobile-navigation');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.close-btn');
 
 window.onscroll = function() {
     let top = window.scrollY;
     if( top >= 50 ) {
         header.classList.add('active');
-        // scrollToTop.style.display = "block";
     } else {
         header.classList.remove('active');
-        // scrollToTop.style.display = "none";
     }
 }
 
+menu.addEventListener('click', (e) => {
+    overlay.classList.add('active');
+    mobileNav.classList.add('active');
+})
 
-// scrollToTop.addEventListener('click', function() {
-//     window.scrollTo({
-//         top: 0,
-//         left: 0,
-//         behavior: "smooth"
-//     })
-// });
+function removeMenu() {
+    overlay.classList.remove('active');
+    mobileNav.classList.remove('active');
+}
+
+overlay.addEventListener('click', () => {
+    removeMenu()
+})
+
+closeBtn.addEventListener('click', () => {
+    removeMenu()
+})
