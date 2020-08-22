@@ -1,0 +1,30 @@
+@import '_mixins';
+@import '_colors';
+@import '_normalize';
+
+.navigation-wrapper {
+    background-color: $white;
+    padding: 30px 0;
+    position: fixed;
+    width: 100%;
+
+    nav {
+        @include maximum-width;
+
+        @include flex(row, space-between, center);
+
+        a {
+            display: inline-block;
+            font-family: 'Palanquin', sans-serif;
+            font-weight: bold;
+        }
+
+        .top-nav-links {
+            @include flex(row, space-between, center);
+
+            ul {
+                @include flex(row, space-between, center);
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import '_mixins';
+@import '_colors';
+@import '_normalize';
+
+.navigation-wrapper {
+    nav {
+        max-width: 1440px;
+        width: calc(100% - 15rem);
+        margin: auto;
+    }
+}

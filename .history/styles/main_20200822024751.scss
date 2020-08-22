@@ -1,0 +1,341 @@
+@import '_mixins';
+@import '_colors';
+@import '_normalize';
+
+// Navigation Styles
+.navigation-wrapper {
+    background-color: $white;
+    padding: 24px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+
+    a {
+        color: $text-color;
+    }
+
+    nav {
+        @include maximum-width;
+
+        @include flex(row, space-between, center);
+
+        a {
+            display: inline-block;
+            font-family: 'Palanquin', sans-serif;
+            @include font(bold, 1.125rem, 33px);
+        }
+
+        .nav-logo {
+            @include font(bold, 2rem, 58px);
+
+            span {
+                color: $button-color;
+            }
+        }
+
+        .top-nav-links {
+            @include flex(row, space-between, center);
+
+            ul {
+                @include flex(row, space-between, center);
+            }
+        }
+    }
+}
+
+// Hero Styles
+.hero-wrapper {
+    background: $white;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        right: 0;
+        height: 100px;
+        width: 100%;
+        background: #e4f0ff;
+        transform: skew(0deg, -2deg);
+      }
+
+    .hero-contents {
+        @include maximum-width;
+        padding: 159px 0  93px;
+
+        .hero-text-wrapper {
+            max-width: 459px;
+
+            h2 {
+                @include font(bold, 4rem, 62px);
+                margin-bottom: 24px;
+            }
+
+            p {
+                @include font(normal, 1rem, 24px);
+                margin-bottom: 59px;
+            }
+
+            .hero-links {
+                .learn-button {
+                    @include button;
+                }
+
+                span {
+                    @include font(600, 1.125rem, 27px);
+                    margin: 0 24px;
+                }
+
+                .contact-button {
+                    @include font(600, 1.125rem, 27px);
+                    color: $button-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// Secondary Contents Styles 
+.secondary-contents {
+    background: linear-gradient(180deg, #E1EEFF 0%, rgba(245, 248, 252, 0) 108.26%);
+    padding-bottom: 129px;
+
+    // Partners Styles
+    .partners-wrapper {
+        @include maximum-width;
+        padding-top: 60px;
+        margin-bottom: 104px;
+
+        h5 {
+            @include font(bold, 1.125rem, 27px);
+            margin-bottom: 45px;
+        }
+    }
+
+    // Goals Styles 
+    .goals-wrapper {
+        @include maximum-width;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        
+        .top-goals-wrapper,
+        .bottom-goals-card-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 16px;
+
+            .goals-card-wrapper {
+                display: grid;
+                grid-row-gap: 16px;
+
+                &.first {
+                    grid-template-rows: repeat(2, minmax(auto, 431px));
+                }
+
+                &.second {
+                    grid-template-rows: repeat(2, minmax(auto, 375px));
+                }
+
+                &.third {
+                    grid-template-rows: repeat(2, minmax(auto, 375px));
+                }
+
+                &.fourth {
+                    grid-template-rows: minmax(auto, 412px);
+                    margin-top: 80px;
+                }
+
+                .goal-card {
+                    background-color: $white;
+                    padding: 32px 32px 0;
+                    border-radius: 8px;
+                    box-shadow: 0px 0px 39px rgba(0, 0, 0, 0.04);
+
+                    .goal-img {
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 4px;
+                        background-color: #C4C4C4;
+                        margin-bottom: 40px;
+                    }
+
+                    h5 {
+                        @include font(600, 1.5rem, 36px);
+                        margin-bottom: 8px;
+                        color: $text-color;
+                    }
+
+                    p {
+                        @include font(normal, 1rem, 24px);
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        .bottom-goals-wrapper {
+            .goal-lead-text {
+                max-width: 491px;
+                margin: 0 0 0 auto;
+
+                h4 {
+                    text-transform: uppercase;
+                    color: $button-color;
+                    @include font(bold, 1.125rem, 27px);
+                    margin-bottom: 4px;
+                }
+
+                h2 {
+                    @include font(bold, 2.25rem, 54px);
+                    margin-bottom: 16px;
+                    color: $text-color;
+                }
+
+                p {
+                    @include font(normal, 1rem, 24px);
+                    max-width: 420px;
+                    color: $text-color;
+                }
+            }
+
+            .bottom-goals-card-wrapper {
+                margin-top: 106px;
+            }
+        }
+    }
+
+    // Solution Styles
+    .solutions-wrapper {
+        @include maximum-width;
+        margin-top: 104px;
+
+        .solution-lead-text-wrapper {
+            text-align: center;
+            margin-bottom: 32px;
+
+            h4 {
+                text-transform: uppercase;
+                color: $button-color;
+                @include font(bold, 1.125rem, 27px);
+            }
+
+            h2 {
+                @include font(bold, 2.25rem, 62px);
+                color: $text-color;
+                margin-bottom: 16px;
+            }
+
+            p {
+                @include font(normal, 1rem, 24px);
+                color: $text-color;
+                max-width: 459px;
+                margin: auto;
+            }
+        }
+
+        .solution-content {
+            max-width: 1113px;
+            margin-top: 72px;
+            @include flex(row, space-between, flex-end);
+
+            .solution-img {
+                width: 489px;
+                height: 516px;
+                background-color: #F8FAFD;
+            }
+
+            .solution-text-content-wrapper {
+                max-width: 507px;
+
+                .solution-text-content {
+                    color: $text-color;
+
+                    h2 {
+                        @include font(bold, 2rem, 48px);
+                        margin-bottom: 8px;
+                    }
+
+                    h5 {
+                        @include font(300,  1.5rem, 36px);
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        @include font(normal, 1rem, 24px);
+                        margin-bottom: 59px;
+                    }
+                }
+
+                .solution-sub-contents {
+                    display: grid;
+                    grid-row-gap: 48px;
+
+                    .sub-contents {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-column-gap: 32px;;
+
+                        .sub-content-text {
+                            @include flex(row, flex-start, center);
+
+                            .sub-content-img {
+                                width: 56px;
+                                height: 56px;
+                                border-radius: 4px;
+                                background: #C4C4C4;
+                                margin-right: 1rem;
+                            }
+
+                            h5 {
+                                @include font(500, 1rem, 24px);
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+
+                .solution-links {
+                    margin-top: 68px;
+
+                    .send-button {
+                        @include button;
+                    }
+    
+                    span {
+                        @include font(600, 1.125rem, 27px);
+                        margin: 0 24px;
+                    }
+    
+                    .learn-button {
+                        @include font(600, 1.125rem, 27px);
+                        color: $button-color;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Primary Contents Styles
+.primary-content-wrapper {
+    background: linear-gradient(0deg, #ffffff 50%, rgba(245, 248, 252, 0) 93.32%);
+
+    // Cases Styles
+    .cases-contents {
+        max-width: 1320px;
+        @include flex(row, space-between, flex-end)
+
+        .cases-img-wrapper {
+            .cases-img {
+                width: 684px;
+                height: 666px;
+                background-color: #F4F4F4;
+            }
+        }
+    }
+}

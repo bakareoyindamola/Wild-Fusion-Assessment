@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: linear-gradient(180deg, #E1EEFF 0%, rgba(245, 248, 252, 0) 108.26%);
+}
+
+a {
+    font-family: 'Palanquin', sans-serif;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    font-family: 'Palanquin', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
