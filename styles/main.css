@@ -1249,9 +1249,11 @@ li {
 .primary-content-wrapper .about-wrapper .about-contents .about-links .link-wrapper .link-img-wrapper .link-img {
   width: 40px;
   height: 40px;
-  background-color: #C4C4C4;
-  border-radius: 4px;
   margin-right: 24px;
+}
+
+.primary-content-wrapper .about-wrapper .about-contents .about-links .link-wrapper .link-img-wrapper .link-img img {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 1056px) {
