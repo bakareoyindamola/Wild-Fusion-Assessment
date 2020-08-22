@@ -343,7 +343,51 @@ li {
   font-weight: bold;
   font-size: 1.125rem;
   line-height: 27px;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
+}
+
+.secondary-contents .partners-wrapper .partners-img-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -20px;
+}
+
+.secondary-contents .partners-wrapper .partners-img-wrapper .partner-img-wrapper {
+  padding: 20px 20px 0;
+}
+
+@media screen and (max-width: 730px) {
+  .secondary-contents .partners-wrapper {
+    text-align: center;
+  }
+  .secondary-contents .partners-wrapper .partners-img-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .secondary-contents .goals-wrapper {
